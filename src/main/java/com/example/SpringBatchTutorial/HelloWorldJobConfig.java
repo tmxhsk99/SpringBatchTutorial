@@ -11,7 +11,6 @@ import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.batch.core.scope.context.ChunkContext;
 import org.springframework.batch.core.step.tasklet.Tasklet;
 import org.springframework.batch.repeat.RepeatStatus;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -19,11 +18,14 @@ import org.springframework.context.annotation.Configuration;
 @RequiredArgsConstructor
 public class HelloWorldJobConfig {
 
-    @Autowired
     private JobBuilderFactory jobBuilderFactory;
 
-    @Autowired
     private StepBuilderFactory stepBuilderFactory;
+
+    public HelloWorldJobConfig(JobBuilderFactory jobBuilderFactory, StepBuilderFactory stepBuilderFactory) {
+        this.jobBuilderFactory = jobBuilderFactory;
+        this.stepBuilderFactory = stepBuilderFactory;
+    }
 
 
     @Bean
