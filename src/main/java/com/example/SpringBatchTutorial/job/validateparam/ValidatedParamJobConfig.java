@@ -19,16 +19,12 @@ import org.springframework.context.annotation.Configuration;
  * run : --spring.batch.job.names=validatedPramJob
  */
 @Configuration
+@RequiredArgsConstructor
 public class ValidatedParamJobConfig {
 
     private final JobBuilderFactory jobBuilderFactory;
 
     private final StepBuilderFactory stepBuilderFactory;
-
-    public ValidatedParamJobConfig(JobBuilderFactory jobBuilderFactory, StepBuilderFactory stepBuilderFactory) {
-        this.jobBuilderFactory = jobBuilderFactory;
-        this.stepBuilderFactory = stepBuilderFactory;
-    }
 
 
     @Bean
