@@ -40,7 +40,7 @@ public class HelloWorldJobConfig {
     @JobScope
     public Step helloWorldStep() {
         return stepBuilderFactory.get("helloWorldStep")
-                .tasklet(helloWorldTasklet())
+                .tasklet(helloWorldTasklet()) // 간단한 작업인 경우 tasklet을 사용한다.
                 .build();
     }
 
