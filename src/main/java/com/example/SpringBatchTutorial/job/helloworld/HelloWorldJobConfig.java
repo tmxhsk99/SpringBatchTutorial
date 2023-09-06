@@ -19,17 +19,13 @@ import org.springframework.context.annotation.Configuration;
  * run : --spring.batch.job.names=helloWorldJob
  */
 @Configuration
+@RequiredArgsConstructor
+
 public class HelloWorldJobConfig {
 
     private final JobBuilderFactory jobBuilderFactory;
 
     private final StepBuilderFactory stepBuilderFactory;
-
-    public HelloWorldJobConfig(JobBuilderFactory jobBuilderFactory, StepBuilderFactory stepBuilderFactory) {
-        this.jobBuilderFactory = jobBuilderFactory;
-        this.stepBuilderFactory = stepBuilderFactory;
-    }
-
 
     @Bean
     public Job helloWorldJob() {
