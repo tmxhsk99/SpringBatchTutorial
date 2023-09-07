@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * desc :
+ * desc : JobListener를 사용하여 Job 실행 전후에 로그를 남긴다.
  * run : --spring.batch.job.names=jobListenerJob
  */
 @Configuration
@@ -29,6 +29,7 @@ public class JobListenerConfig {
     public Job jobListenerJob(Step jobListenerStep) {
         return jobBuilderFactory.get("jobListenerJob") // 이름을 정해준다.
                 .incrementer(new RunIdIncrementer())
+                .listener(new JobLoggerListener()) // JobListener를 등록한다.
                 .start(jobListenerStep)
                 .build();
     }
