@@ -5,7 +5,7 @@ spring:
     jdbc:
       initialize-schema: ALWAYS
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/spring_batch?useSSL=false
+    url: jdbc:mysql://127.0.0.1:3306/spring_batch_tutorial?useSSL=false
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: root
