@@ -1,7 +1,6 @@
 package com.example.SpringBatchTutorial.core.domain.accounts;
 
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +11,9 @@ import java.util.Date;
 @Getter
 @ToString
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Accounts {
 
     @Id
