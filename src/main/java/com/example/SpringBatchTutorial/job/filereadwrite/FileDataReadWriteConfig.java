@@ -100,7 +100,7 @@ public class FileDataReadWriteConfig {
      * Player 객체를 PlayerYears 객체로 변환하는 ItemProcessor
      * @return
      */
-    @JobScope
+    @StepScope
     @Bean
     public ItemProcessor<Player,PlayerYears> playerItemProcessor() {
         return new ItemProcessor<Player, PlayerYears>() {
