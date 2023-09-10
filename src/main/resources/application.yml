@@ -11,3 +11,4 @@ spring:
     password: root
   jpa:
     show-sql:true
+spring.main.allow-bean-definition-overriding: true
