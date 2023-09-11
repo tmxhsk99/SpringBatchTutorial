@@ -1,4 +1,13 @@
+# default profile
 spring:
+  profiles:
+    active: local
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
   batch:
     job:
       names: ${JOB_NAME:NONE}
@@ -11,4 +20,14 @@ spring:
     password: root
   jpa:
     show-sql:true
+# 중복 타입 빈 등록 허용
 spring.main.allow-bean-definition-overriding: true
+---
+  spring:
+    config:
+      activate:
+        on-profile: test
+      jpa:
+        database: h2
+
+

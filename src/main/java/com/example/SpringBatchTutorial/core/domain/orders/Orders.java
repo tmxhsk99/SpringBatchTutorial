@@ -1,7 +1,6 @@
 package com.example.SpringBatchTutorial.core.domain.orders;
 
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,6 +10,9 @@ import java.util.Date;
 
 @Getter
 @ToString
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class Orders {
     @Id
